@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="土耳其旅行">
+<title>2026 土耳其旅行 App</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--ink:#172033;--muted:#697386;--line:#e8ebf0;--accent:#111827;--green:#16835b;--orange:#d97706;--red:#c2410c;--shadow:0 10px 30px rgba(17,24,39,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif}
+button,a{font:inherit}.app{max-width:760px;margin:auto;padding-bottom:90px}
+.hero{padding:calc(20px + env(safe-area-inset-top)) 18px 18px;background:linear-gradient(145deg,#111827,#263247);color:white;border-radius:0 0 28px 28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-size:13px;opacity:.72}.title{font-size:27px;font-weight:800;margin:5px 0 3px}.sub{font-size:13px;opacity:.72}
+.iconbtn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.09);color:white;border-radius:13px;padding:9px 11px;cursor:pointer}
+.progress{margin-top:18px;height:7px;background:rgba(255,255,255,.13);border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:white;border-radius:99px;width:43%}
+.progressline{display:flex;justify-content:space-between;margin-top:7px;font-size:11px;opacity:.7}
+.wrap{padding:14px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:14px}.wide{grid-column:1/-1}
+.kicker{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.04em}.big{font-size:22px;font-weight:800;margin-top:4px}.small{font-size:12px;color:var(--muted);line-height:1.55}
+.actionrow{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}.btn{border:0;background:#111827;color:white;border-radius:12px;padding:10px 13px;font-weight:700;cursor:pointer}.btn.alt{background:#eef0f4;color:#172033}.btn.green{background:#16835b}
+.section-title{font-size:18px;font-weight:800;margin:22px 2px 10px}.daytabs{display:flex;gap:7px;overflow:auto;padding:2px 0 5px}.daytab{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;color:#5b6575;cursor:pointer}.daytab.active{background:#111827;color:#fff;border-color:#111827}
+.timeline{display:grid;gap:9px}.event{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:start}.time{font-weight:800;font-size:12px;color:#4b5563;padding-top:13px}.eventbody{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px}.eventbody b{font-size:14px}.tag{display:inline-block;font-size:10px;padding:3px 7px;border-radius:99px;background:#eef0f4;color:#566071;margin-left:5px}.eventbody p{margin:5px 0 0;font-size:12px;color:var(--muted);line-height:1.5}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button{border:1px solid var(--line);background:white;border-radius:15px;padding:11px 5px;cursor:pointer}.quick span{display:block;font-size:19px}.quick small{font-size:10px;color:#5e6877}
+.info{display:flex;gap:10px;align-items:flex-start}.dot{width:10px;height:10px;border-radius:50%;background:#111827;margin-top:5px;flex:none}.info b{font-size:13px}.info p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+.check{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.check:last-child{border:0}.check input{width:18px;height:18px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px max(12px,calc((100% - 760px)/2 + 12px)) calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:6px;z-index:10}.bottom button{border:0;background:transparent;color:#677184;font-size:10px;padding:5px;cursor:pointer}.bottom button span{display:block;font-size:18px;margin-bottom:2px}.bottom button.active{color:#111827;font-weight:800}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:30;align-items:flex-end}.sheet{background:white;width:100%;max-width:760px;margin:auto;border-radius:24px 24px 0 0;padding:20px;max-height:82vh;overflow:auto}.sheet h3{margin:0 0 12px}.close{float:right;border:0;background:#eef0f4;border-radius:50%;width:32px;height:32px;cursor:pointer}
+.notice{padding:11px 12px;border-radius:13px;background:#fff7ed;color:#9a4c00;font-size:12px;line-height:1.5;margin-top:10px}
+@media(min-width:700px){.hero{border-radius:0 0 32px 32px}.wrap{padding:18px 4px}.bottom{border-radius:20px 20px 0 0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="top"><div><div class="brand">2026 国庆 · 3人同行</div><div class="title">土耳其旅行 App</div><div class="sub">Istanbul → Cappadocia → Antalya → Fethiye</div></div><button class="iconbtn" onclick="shareTrip()">分享</button></div>
+  <div class="progress"><i id="progressBar"></i></div><div class="progressline"><span id="progressText">行程准备中</span><span>10/1–10/7</span></div>
+</header>
+
+<main class="wrap">
+<section id="home">
+  <div class="section-title">今天的旅行控制台</div>
+  <div class="grid">
+    <div class="card wide"><div class="kicker">当前日程</div><div class="big" id="todayTitle">Day 1 · 伊斯坦布尔抵达</div><div class="small" id="todaySub">10/1 · 北京 → 阿拉木图 → 伊斯坦布尔</div><div class="actionrow"><button class="btn" onclick="openToday()">打开今日行程</button><button class="btn alt" onclick="nextStop()">🧭 下一站</button></div></div>
+    <div class="card"><div class="kicker">下一项</div><div class="big" id="nextTime">—</div><div class="small" id="nextEvent">根据当前时间自动显示</div></div>
+    <div class="card"><div class="kicker">旅程进度</div><div class="big" id="dayCount">Day 1/7</div><div class="small">共 7 天核心行程</div></div>
+  </div>
+
+  <div class="section-title">一键操作</div>
+  <div class="quick">
+    <button onclick="nextStop()"><span>🧭</span><small>下一站</small></button>
+    <button onclick="openFlights()"><span>✈️</span><small>航班</small></button>
+    <button onclick="openHotels()"><span>🏨</span><small>酒店</small></button>
+    <button onclick="openPrep()"><span>📋</span><small>待办</small></button>
+  </div>
+
+  <div class="section-title">关键提醒</div>
+  <div class="card">
+    <div class="info"><div class="dot"></div><div><b>三人同行 · 以安全和不赶路为优先</b><p>原则：尽量 21:00 前结束当天活动；不安排夜间自驾。</p></div></div>
+    <div class="info" style="margin-top:12px"><div class="dot"></div><div><b>当前需要重点确认</b><p>10/4 ASR→AYT、10/5 D400 包车、10/6 滑翔伞、10/7 DLM→IST，以及机场接送。</p></div></div>
+  </div>
+</section>
+
+<section id="itinerary" style="display:none">
+  <div class="section-title">7 天行程</div>
+  <div class="daytabs" id="dayTabs"></div>
+  <div id="dayContent"></div>
+</section>
+
+<section id="booking" style="display:none">
+  <div class="section-title">航班 & 住宿</div>
+  <div id="flightCards"></div>
+  <div class="section-title">酒店</div>
+  <div id="hotelCards"></div>
+</section>
+
+<section id="todo" style="display:none">
+  <div class="section-title">出发前 & 现场待办</div>
+  <div class="card" id="todoList"></div>
+</section>
+</main>
+</div>
+
+<nav class="bottom">
+<button class="active" data-page="home" onclick="showPage('home',this)"><span>⌂</span>首页</button>
+<button data-page="itinerary" onclick="showPage('itinerary',this)"><span>☷</span>行程</button>
+<button data-page="booking" onclick="showPage('booking',this)"><span>✈</span>机酒</button>
+<button data-page="todo" onclick="showPage('todo',this)"><span>✓</span>待办</button>
+</nav>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+<script>
+const days=[
+{date:"10/1",title:"北京 → 阿拉木图 → 伊斯坦布尔",hotel:"Ring Stone Hotels Old City",events:[
+["全天","PEK→ALA→IST","KC268 + KC911","已确认"],["抵达后","机场 → 酒店","建议私人接送","安全优先"],["下午/晚间","酒店休息","不安排密集景点","21:00 前结束"]]},
+{date:"10/2",title:"伊斯坦布尔老城",hotel:"Ring Stone Hotels Old City",events:[
+["09:00","圣索菲亚大教堂","步行/短程交通","预约/门票"],["10:10","蓝色清真寺","步行","参观"],["11:10","地下水宫","步行","参观"],["12:10","午餐","",""],["13:20","托普卡帕宫","步行/短程交通","重点景点"],["16:00","香料市场","步行/电车","逛市集"],["17:20","Eminönü / 博斯普鲁斯","步行","看海峡"],["晚间","晚餐 → 酒店","短程交通","20:00 左右回酒店"]]},
+{date:"10/3",title:"伊斯坦布尔 → 卡帕多奇亚",hotel:"Enjoy Stone Hotel",events:[
+["09:00","苏莱曼尼耶清真寺","交通","参观"],["10:15","大巴扎","步行","购物"],["12:00","午餐","",""],["13:15","加拉塔 / Karaköy","交通","轻松逛"],["晚间","IST→NAV","TK2090 · 20:45","已确认"],["约23:15","NAV→Göreme→酒店","私人接送","抵达休息"]]},
+{date:"10/4",title:"卡帕多奇亚 → 安塔利亚",hotel:"BONNIE CITY HOTEL",events:[
+["05:00","起床","—","热气球日"],["05:20–05:40","Brothers Balloons 接送","接送车","需提前确认"],["07:00–08:00","热气球","Brothers Balloons","已规划"],["10:30–12:00","Göreme / Love Valley / 精灵烟囱","包车/短途","轻量拍照"],["18:10–19:30","ASR→AYT","PC3505","待预订"],["约20:30","机场→酒店","私人接送","入住"]]},
+{date:"10/5",title:"安塔利亚 → Kaş → Kaputaş → Kalkan → 费特希耶",hotel:"King Royal Palace Hotel",events:[
+["08:30","安塔利亚出发","D400 私家车","待预订"],["10:30","Phaselis","可选","时间允许再去"],["13:00–14:30","Kaş","包车","午餐/海边"],["15:00–15:45","Kaputaş 海滩","包车","拍照"],["16:20–16:50","Kalkan","包车","短停"],["约19:00","抵达 Fethiye","包车","入住"]]},
+{date:"10/6",title:"费特希耶 / Ölüdeniz",hotel:"King Royal Palace Hotel",events:[
+["08:00–10:30","Babadağ 双人滑翔伞","接送/滑翔伞","待预订"],["11:00–13:00","Blue Lagoon / Belcekız","交通","海边"],["午间","午餐","",""],["14:00–16:00","海滩","步行/短程交通","放松"],["17:00–18:30","Fethiye Marina / 老城","交通","逛街"],["20:00","回酒店","—","结束当天活动"]]},
+{date:"10/7",title:"费特希耶 → 达拉曼 → 伊斯坦布尔 → 阿拉木图",hotel:"机场转机",events:[
+["上午","酒店周边散步","步行","轻松收尾"],["10:45","酒店→DLM","私人接送","准时出发"],["11:45–12:00","抵达机场","DLM","预留值机时间"],["14:35–16:10","DLM→IST","TK2559","待预订"],["晚间","IST 转机","机场内","不进市区"],["约21:25","IST→ALA","KC912","已确认"]]}
+];
+
+const flights=[
+["10/1","PEK→ALA","KC268","已确认"],["10/1","ALA→IST","KC911","已确认"],["10/3","IST→NAV","TK2090","20:45 · 已确认"],["10/4","ASR→AYT","PC3505","18:10–19:30 · 待预订"],["10/7","DLM→IST","TK2559","14:35–16:10 · 待预订"],["10/7","IST→ALA","KC912","约21:25 · 已确认"],["10/8","ALA→PEK","KC267","约21:20 · 已确认"]
+];
+const hotels=[["10/1–10/3","Ring Stone Hotels Old City","Istanbul"],["10/3–10/4","Enjoy Stone Hotel","Göreme"],["10/4–10/5","BONNIE CITY HOTEL","Antalya"],["10/5–10/7","King Royal Palace Hotel","Fethiye"]];
+const todos=["确认 10/4 PC3505 ASR→AYT","预订 10/5 D400 私家车","预订 10/6 Babadağ 双人滑翔伞","确认 10/7 TK2559 DLM→IST","确认机场私人接送（IST / NAV / AYT / DLM）","第三优先：确认伊斯坦布尔主要景点门票","检查护照、保险、支付方式与离线资料","三人分别保存网站到手机主屏幕"];
+
+let selectedDay=0;
+
+function showPage(id,btn){
+ document.querySelectorAll('main section').forEach(x=>x.style.display='none');
+ document.getElementById(id).style.display='block';
+ document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ if(id==='itinerary')renderDays();
+ if(id==='booking')renderBooking();
+ if(id==='todo')renderTodos();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderDays(){
+ const tabs=document.getElementById('dayTabs');tabs.innerHTML='';
+ days.forEach((d,i)=>{const b=document.createElement('button');b.className='daytab'+(i===selectedDay?' active':'');b.textContent='D'+(i+1)+' '+d.date;b.onclick=()=>{selectedDay=i;renderDays()};tabs.appendChild(b)});
+ const d=days[selectedDay];
+ document.getElementById('dayContent').innerHTML='<div class="card" style="margin:10px 0 12px"><b>Day '+(selectedDay+1)+' · '+d.title+'</b><div class="small">住宿：'+d.hotel+'</div></div><div class="timeline">'+d.events.map(e=>'<div class="event"><div class="time">'+e[0]+'</div><div class="eventbody"><b>'+e[1]+'</b>'+ (e[3]?'<span class="tag">'+e[3]+'</span>':'') +'<p>'+e[2]+'</p></div></div>').join('')+'</div>';
+}
+function renderBooking(){
+ document.getElementById('flightCards').innerHTML=flights.map(f=>'<div class="card" style="margin-bottom:8px"><div class="kicker">'+f[0]+'</div><div class="big" style="font-size:17px">'+f[1]+' · '+f[2]+'</div><div class="small">'+f[3]+'</div></div>').join('');
+ document.getElementById('hotelCards').innerHTML=hotels.map(h=>'<div class="card" style="margin-bottom:8px"><div class="big" style="font-size:16px">'+h[1]+'</div><div class="small">'+h[0]+' · '+h[2]+'</div></div>').join('');
+}
+function renderTodos(){
+ const saved=JSON.parse(localStorage.getItem('turkeyTodos')||'{}');
+ document.getElementById('todoList').innerHTML=todos.map((t,i)=>'<label class="check"><input type="checkbox" '+(saved[i]?'checked':'')+' onchange="saveTodo('+i+',this.checked)"> '+t+'</label>').join('');
+}
+function saveTodo(i,v){const s=JSON.parse(localStorage.getItem('turkeyTodos')||'{}');s[i]=v;localStorage.setItem('turkeyTodos',JSON.stringify(s))}
+function mapSearch(q){window.open('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q),'_blank')}
+function nextStop(){const d=days[Math.min(selectedDay,days.length-1)];const e=d.events.find(x=>x[1]&&x[1]!==d.events[0][1])||d.events[0];mapSearch(e[1]+' '+d.title)}
+function openToday(){showPage('itinerary',document.querySelector('[data-page="itinerary"]'));selectedDay=currentDayIndex();renderDays()}
+function openFlights(){showPage('booking',document.querySelector('[data-page="booking"]'));document.getElementById('flightCards').scrollIntoView({behavior:'smooth'})}
+function openHotels(){showPage('booking',document.querySelector('[data-page="booking"]'));document.getElementById('hotelCards').scrollIntoView({behavior:'smooth'})}
+function openPrep(){showPage('todo',document.querySelector('[data-page="todo"]'))}
+function currentDayIndex(){const now=new Date();const start=new Date('2026-10-01T00:00:00');const end=new Date('2026-10-07T23:59:59');if(now>=start&&now<=end)return Math.floor((now-start)/86400000);return now<start?0:6}
+function updateDashboard(){
+ const i=currentDayIndex(),d=days[i];document.getElementById('todayTitle').textContent='Day '+(i+1)+' · '+d.title;document.getElementById('todaySub').textContent=d.date+' · 住宿：'+d.hotel;document.getElementById('dayCount').textContent='Day '+(i+1)+'/7';
+ const pct=((i+1)/7*100);document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressText').textContent='行程 '+Math.round(pct)+'%';
+ const ev=d.events[0];document.getElementById('nextTime').textContent=ev[0];document.getElementById('nextEvent').textContent=ev[1];
+}
+function shareTrip(){if(navigator.share)navigator.share({title:'2026 土耳其旅行 App',text:'我们的土耳其 7 日旅行控制台',url:location.href});else navigator.clipboard?.writeText(location.href).then(()=>alert('链接已复制'))}
+function closeModal(){document.getElementById('modal').style.display='none'}
+updateDashboard();
+</script>
+<script>
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>

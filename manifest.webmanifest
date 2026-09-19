@@ -1,0 +1,17 @@
+{
+  "name": "2026 国庆土耳其旅行 App",
+  "short_name": "土耳其旅行",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#111827",
+  "description": "三人土耳其7日旅行控制台",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
